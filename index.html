@@ -1,265 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sneha | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sneha Pittanikat | Portfolio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      scroll-behavior: smooth;
+    :root{
+      --bg:#f7f8fa; --text:#222; --muted:#555; --card:#fff; --brand:#2e7d32; --shadow:0 6px 18px rgba(0,0,0,.08);
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.85}
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      background: #222;
-      padding: 1rem;
-      border-bottom-left-radius: 10px;
-      z-index: 1000;
+    /* NAVBAR (top-right quick access) */
+    nav{
+      position:fixed; top:12px; right:12px; background:#111; color:#fff;
+      padding:10px 14px; border-radius:12px; z-index:1000; box-shadow:var(--shadow);
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+    nav a{color:#fff; margin-left:12px; font-weight:600; font-size:14px; white-space:nowrap}
+    nav a:first-child{margin-left:0}
 
-    /* Sections */
-    section {
-      padding: 80px 10%;
-      min-height: 90vh;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #444;
-    }
+    /* SECTIONS */
+    section{padding:84px 6vw; max-width:1080px; margin:0 auto}
+    h1,h2{margin:0 0 14px}
+    h2{font-size:28px; text-align:center; color:#333}
+    .sub{color:var(--muted); text-align:center; margin-top:-6px}
 
-    /* Home */
-    .home {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .home img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid #4CAF50;
-    }
-    .tagline {
-      font-size: 18px;
-      color: #555;
-    }
+    /* HOME (no photo) */
+    .home{min-height:55vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+    .home h1{font-size:36px}
+    .home .tag{font-size:18px; color:var(--muted)}
 
-    /* About */
-    .about p {
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-      line-height: 1.6;
-    }
-    .icons a {
-      margin: 0 15px;
-      font-size: 24px;
-      text-decoration: none;
-    }
+    /* ABOUT */
+    .about p{line-height:1.7; max-width:900px; margin:10px auto}
+    .socials{display:flex; gap:18px; justify-content:center; margin-top:14px}
+    .icon-link{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; background:var(--card); border-radius:12px; box-shadow:var(--shadow); font-weight:600}
+    .icon{width:20px; height:20px; fill:currentColor}
 
-    /* Skills */
-    .skills .skill {
-      margin: 15px 0;
-    }
-    .skills .label {
-      display: flex;
-      justify-content: space-between;
-    }
-    .bar {
-      width: 100%;
-      background: #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-      margin-top: 5px;
-    }
-    .bar-fill {
-      height: 8px;
-      background: #4CAF50;
-    }
+    /* SKILLS */
+    .skills-wrap{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:22px; margin-top:20px}
+    .skill{background:var(--card); border-radius:12px; padding:16px; box-shadow:var(--shadow)}
+    .skill .row{display:flex; justify-content:space-between; font-weight:600}
+    .bar{height:10px; background:#d9d9d9; border-radius:8px; overflow:hidden; margin-top:8px}
+    .fill{height:100%; background:linear-gradient(90deg,#43a047,#66bb6a)}
 
-    /* Projects */
-    .projects .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .project {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .project a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #4CAF50;
-    }
+    /* PROJECTS */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:20px}
+    .card{background:var(--card); border-radius:14px; padding:18px; text-align:center; box-shadow:var(--shadow)}
+    .card h3{margin:8px 0 10px}
+    .proj-icon{width:36px; height:36px; margin-bottom:6px; fill:var(--brand)}
 
-    /* Certificates */
-    .certs .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .certs img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
-    }
+    /* CERTIFICATES */
+    .cert img{width:100%; display:block; border-radius:12px; box-shadow:var(--shadow)}
+    .cert a:focus img, .cert a:hover img{transform:scale(1.01)}
+    .cert a{display:block; transition:transform .15s ease}
 
-    /* Contact */
-    .contact .item {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .contact a {
-      color: #4CAF50;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    /* CONTACT */
+    .contact-list{display:grid; gap:10px; justify-items:center; margin-top:10px}
+    .pill{background:var(--card); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow); display:inline-flex; align-items:center; gap:8px}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
-    }
+    footer{text-align:center; padding:28px 10px; color:#fff; background:#111; margin-top:30px; font-size:14px}
+    @media (max-width:560px){ nav{left:12px; right:auto; overflow-x:auto} }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Top-right Quick Access -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#certs">Certificates</a>
+    <a href="#certificates">Certificates</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Home -->
+  <!-- HOME -->
   <section id="home" class="home">
-    <img src="assets/myphoto.jpg" alt="Sneha Photo">
-    <h1>Hi, I am Sneha Pittanikat</h1>
-    <p class="tagline">Snowflake Developer · Data Engineer · Gen AI Enthusiast</p>
+    <h1>Hi, I am <span style="font-weight:800">Sneha Pittanikat</span></h1>
+    <p class="tag">Snowflake developer · Data Engineer · Gen AI Enthusiast</p>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>
-      Welcome to my portfolio website! I am a passionate Data Engineer with 3+ years of experience in Big Data. 
-      Proficient in designing scalable data solutions, optimizing pipelines, and leveraging advanced analytics. 
-      Skilled in Hadoop, Spark, Python and SQL for efficient data processing. Strong problem-solving abilities 
-      with expertise in data modeling, database management and ETL processes.
-    </p>
-    <p>
-      Through this website, you will discover a collection of my projects and certifications that showcase my abilities 
-      and creative problem-solving approach. If you're seeking a Data Engineer who is passionate about delivering excellence, 
-      let's connect and collaborate on creating something remarkable together.
-    </p>
-    <div class="icons">
-      <a href="https://linkedin.com/in/your-link" target="_blank">🔗 LinkedIn</a>
-      <a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a>
-      <a href="resume.pdf" target="_blank">📄 Resume</a>
+    <p>Welcome to my portfolio website! I am a passionate Data Engineer with 3+ years of experience in Big Data . Proficient in designing scalable data solutions, optimizing pipelines, and leveraging advanced analytics. Skilled in Hadoop, Spark, Python and SQL for efficient data processing. Strong problem-solving abilities with expertise in data modeling, database management and ETL processes.</p>
+    <p>Through this website, you will discover a collection of my projects and certifications that showcase my abilities and creative problem-solving approach.If you're seeking a Data Engineer who is passionate about delivering excellence, let's connect and collaborate on creating something remarkable together.</p>
+
+    <!-- Social / Icon links -->
+    <div class="socials">
+      <!-- LinkedIn -->
+      <a class="icon-link" href="https://www.linkedin.com/in/sneha-pittanikat/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.5 1 3.86 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.8v2h.05c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.08V23h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.17 0-2.5 1.7-2.5 3.45V23h-3.8V8.5z"/></svg>
+        LinkedIn
+      </a>
+      <!-- GitHub -->
+      <a class="icon-link" href="https://github.com/PITTANIKATSNEHA" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.74.08-.72.08-.72 1.22.09 1.86 1.27 1.86 1.27 1.08 1.86 2.84 1.32 3.53 1 .11-.8.42-1.32.76-1.62-2.67-.31-5.48-1.33-5.48-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.55.12-3.23 0 0 1.01-.32 3.31 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.68.24 2.93.12 3.23.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.6-5.49 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.58A12 12 0 0 0 12 .5z"/></svg>
+        GitHub
+      </a>
+      <!-- Resume (Google Drive link) -->
+      <a class="icon-link" href="https://drive.google.com/file/d/YOUR_RESUME_ID/view?usp=sharing" target="_blank" rel="noopener" aria-label="Resume (Google Drive)">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L13 3.5zM7 12h10v1.5H7V12zm0 3h10v1.5H7V15zm0 3h7v1.5H7V18z"/></svg>
+        Resume
+      </a>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="skills">
+  <!-- SKILLS -->
+  <section id="skills">
     <h2>My Skills</h2>
-    <div class="skill">
-      <div class="label"><span>Python</span><span>91%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:91%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>SQL</span><span>95%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>Big Data</span><span>85%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>Apache Spark</span><span>79%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:79%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>Scala</span><span>82%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:82%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>Azure Databricks</span><span>85%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>Apache Airflow</span><span>78%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:78%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="label"><span>PySpark</span><span>90%</span></div>
-      <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+    <p class="sub">Visual scale similar to your screenshot</p>
+    <div class="skills-wrap">
+      <div class="skill"><div class="row"><span>Python</span><span>91%</span></div><div class="bar"><div class="fill" style="width:91%"></div></div></div>
+      <div class="skill"><div class="row"><span>SQL</span><span>95%</span></div><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+      <div class="skill"><div class="row"><span>Big Data</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+      <div class="skill"><div class="row"><span>Apache Spark</span><span>79%</span></div><div class="bar"><div class="fill" style="width:79%"></div></div></div>
+      <div class="skill"><div class="row"><span>Scala</span><span>82%</span></div><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+      <div class="skill"><div class="row"><span>Azure Databricks</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+      <div class="skill"><div class="row"><span>Apache Airflow</span><span>78%</span></div><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+      <div class="skill"><div class="row"><span>PySpark</span><span>90%</span></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
+  <!-- PROJECTS -->
+  <section id="projects">
     <h2>Projects</h2>
     <div class="grid">
-      <div class="project">
-        <h3>Project 1</h3>
-        <a href="https://github.com/yourgithub/project1" target="_blank">🔗 View Repo</a>
-      </div>
-      <div class="project">
-        <h3>Project 2</h3>
-        <a href="https://github.com/yourgithub/project2" target="_blank">🔗 View Repo</a>
-      </div>
+      <article class="card">
+        <svg class="proj-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v4H3V5zm0 6h18v8H3v-8zm2 2v4h5v-4H5z"/></svg>
+        <h3>Bangalore Road Accidents – Analysis</h3>
+        <a href="https://github.com/YOUR-GITHUB-USERNAME/accidents-analysis" target="_blank" rel="noopener">View GitHub Repo →</a>
+      </article>
+      <article class="card">
+        <svg class="proj-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm2 2v6h5v-6H6z"/></svg>
+        <h3>API Data Pipeline</h3>
+        <a href="https://github.com/YOUR-GITHUB-USERNAME/api-data-pipeline" target="_blank" rel="noopener">View GitHub Repo →</a>
+      </article>
+      <article class="card">
+        <svg class="proj-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l4 4H8l4-4zM6 9h12v10H6z"/></svg>
+        <h3>Snowflake ETL</h3>
+        <a href="https://github.com/YOUR-GITHUB-USERNAME/snowflake-etl" target="_blank" rel="noopener">View GitHub Repo →</a>
+      </article>
     </div>
   </section>
 
-  <!-- Certificates -->
-  <section id="certs" class="certs">
+  <!-- CERTIFICATES -->
+  <section id="certificates">
     <h2>Certificates</h2>
     <div class="grid">
-      <a href="https://certificate-link.com" target="_blank">
-        <img src="assets/cert1.png" alt="Certificate 1">
-      </a>
-      <a href="https://certificate-link.com" target="_blank">
-        <img src="assets/cert2.png" alt="Certificate 2">
-      </a>
+      <div class="cert">
+        <a href="https://learn.microsoft.com/en-us/users/snehapittanikat-2463/transcript/764e3uoe3xn2oex?tab=tab-other" target="_blank" rel="noopener">
+          <img src="https://github.com/PITTANIKATSNEHA/PittanikatSneha/blob/main/assets/AZ900.png" alt="Microsoft Azure Fundamentals (AZ-900)">
+        </a>
+      </div>
+      <div class="cert">
+        <a href="https://learn.microsoft.com/en-us/users/snehapittanikat-2463/transcript/764e3uoe3xn2oex?tab=tab-other" target="_blank" rel="noopener">
+          <img src="https://github.com/PITTANIKATSNEHA/PittanikatSneha/blob/main/assets/DP900.png" alt="Microsoft Data Fundamentals (DP-900)">
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>Contact Me</h2>
-    <div class="item">📧 <a href="mailto:yourmail@example.com">yourmail@example.com</a></div>
-    <div class="item">📍 Bangalore, India</div>
-    <div class="item">🔗 <a href="https://linkedin.com/in/your-link" target="_blank">LinkedIn</a></div>
+    <div class="contact-list">
+      <div class="pill">📧 <a href="pittanikatsneha@gmail.com">pittanikatsneha@gmail.com</a></div>
+      <div class="pill">📍 Bangalore, India</div>
+      <div class="pill">🔗 <a href="https://www.linkedin.com/in/sneha-pittanikat" target="_blank" rel="noopener">LinkedIn: Sneha Pittanikat</a></div>
+    </div>
   </section>
 
-  <footer>
-    © 2025 Sneha Pittanikat
-  </footer>
+  <footer>© 2025 Sneha Pittanikat</footer>
 </body>
 </html>

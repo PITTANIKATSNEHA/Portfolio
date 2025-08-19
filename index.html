@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sneha | Portfolio</title>
+  <style>
+    :root { --bg:#f9f9f9; --text:#333; --card:#fff; --muted:#444; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    header { background:#222; color:#fff; padding:48px 16px; text-align:center; }
+    header h1 { margin:0 0 8px; font-size:28px; }
+    header p { margin:0; opacity:.9; }
+    nav { margin-top:12px; }
+    nav a { color:#fff; text-decoration:none; margin:0 10px; font-weight:600; }
+    section { padding:40px 6vw; max-width:980px; margin:0 auto; }
+    h2 { color:var(--muted); margin:0 0 16px; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background:var(--card); padding:16px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+    .card h3 { margin:0 0 8px; }
+    .card a { text-decoration:none; font-weight:600; }
+    footer { text-align:center; padding:24px; background:#222; color:#fff; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👋 Hi, I'm Sneha</h1>
+    <p>Software Engineer · Data & Frontend Enthusiast</p>
+    <nav>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="skills">
+    <h2>🚀 Skills</h2>
+    <p>SQL · Python · Java · React JS · Azure (IaaS, Databricks, Storage) · ETL · Data Warehousing · Git · DevOps</p>
+  </section>
+
+  <section id="projects">
+    <h2>📂 Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>📊 Bangalore Road Accidents – Data Analysis</h3>
+        <p><strong>Tech:</strong> SQL, Tableau</p>
+        <p>Cleaned accident dataset & built KPI dashboards.</p>
+        <a href="https://github.com/yourgithub/project-link" target="_blank">View Project →</a>
+      </article>
+      <article class="card">
+        <h3>⚡ API Data Pipeline</h3>
+        <p><strong>Tech:</strong> Python, Azure Storage, SQL</p>
+        <p>Automated extract → transform → load to DB.</p>
+        <a href="https://github.com/yourgithub/project-link" target="_blank">View Project →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="recognition">
+    <h2>🏆 Recognition</h2>
+    <ul>
+      <li>Apex Award H1 FY23 – Accenture</li>
+      <li>Recognized by Roche leadership for client-centricity</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>📫 Contact</h2>
+    <p>
+      <a href="https://linkedin.com/in/your-link" target="_blank">LinkedIn</a> ·
+      <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    </p>
+  </section>
+
+  <footer>© 2025 Sneha · HTML + CSS</footer>
+</body>
+</html>

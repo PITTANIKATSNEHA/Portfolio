@@ -52,43 +52,29 @@
     .proj-icon{width:36px; height:36px; margin-bottom:6px; fill:var(--brand)}
 
     /* CERTIFICATES */
-    .cert img{width:100%; display:block; border-radius:12px; box-shadow:var(--shadow)}
-    .cert a:focus img, .cert a:hover img{transform:scale(1.01)}
-    .cert a{display:block; transition:transform .15s ease} 
-
-/* CERTIFICATES */
-/*#certificates .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.cert {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cert img {
-  max-width: 100%;
-  width: 320px;  /* set a neat fixed width */
-  /* ---- height: auto;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease;
-}
-
-.cert a:hover img {
-  transform: scale(1.05);
-} --- */
-
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .cert img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+      display: block;
+    }
+    .cert a:hover img {
+      transform: scale(1.05);
+    }
 
     /* CONTACT */
     .contact-list{display:grid; gap:10px; justify-items:center; margin-top:10px}
     .pill{background:var(--card); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow); display:inline-flex; align-items:center; gap:8px}
 
-    footer{text-align:center; padding:28px 10px; color:#fff; background:#111; margin-top:30px; font-size:14px}
+    footer{text-align:center; padding:28px; color:#fff; background:#111; margin-top:30px; font-size:14px}
     @media (max-width:560px){ nav{left:12px; right:auto; overflow-x:auto} }
   </style>
 </head>
@@ -118,17 +104,14 @@
 
     <!-- Social / Icon links -->
     <div class="socials">
-      <!-- LinkedIn -->
       <a class="icon-link" href="https://www.linkedin.com/in/sneha-pittanikat/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.5 1 3.86 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.8v2h.05c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.08V23h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.17 0-2.5 1.7-2.5 3.45V23h-3.8V8.5z"/></svg>
         LinkedIn
       </a>
-      <!-- GitHub -->
       <a class="icon-link" href="https://github.com/PITTANIKATSNEHA" target="_blank" rel="noopener" aria-label="GitHub">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.74.08-.72.08-.72 1.22.09 1.86 1.27 1.86 1.27 1.08 1.86 2.84 1.32 3.53 1 .11-.8.42-1.32.76-1.62-2.67-.31-5.48-1.33-5.48-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.55.12-3.23 0 0 1.01-.32 3.31 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.68.24 2.93.12 3.23.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.6-5.49 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.58A12 12 0 0 0 12 .5z"/></svg>
         GitHub
       </a>
-      <!-- Resume (Google Drive link) -->
       <a class="icon-link" href="https://docs.google.com/document/d/1pj0XlUJFYRmVUp5czGr4HMEIt37FzxrHA_SpLypJF7o/edit?usp=sharing" target="_blank" rel="noopener" aria-label="Resume (Google Drive)">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L13 3.5zM7 12h10v1.5H7V12zm0 3h10v1.5H7V15zm0 3h7v1.5H7V18z"/></svg>
         Resume
@@ -177,15 +160,15 @@
   <!-- CERTIFICATES -->
   <section id="certificates">
     <h2>Certificates</h2>
-    <div class="grid">
+    <div class="cert-grid">
       <div class="cert">
         <a href="https://learn.microsoft.com/en-us/users/snehapittanikat-2463/transcript/764e3uoe3xn2oex?tab=tab-other" target="_blank" rel="noopener">
-          <img src="https://github.com/PITTANIKATSNEHA/portfolio/blob/main/assets/AZ900.png" alt="Microsoft Azure Fundamentals (AZ-900)">
+          <img src="assets/AZ900.png" alt="Microsoft Azure Fundamentals (AZ-900)">
         </a>
       </div>
       <div class="cert">
         <a href="https://learn.microsoft.com/en-us/users/snehapittanikat-2463/transcript/764e3uoe3xn2oex?tab=tab-other" target="_blank" rel="noopener">
-          <img src="https://github.com/PITTANIKATSNEHA/portfolio/blob/main/assets/DP900.png" alt="Microsoft Data Fundamentals (DP-900)">
+          <img src="assets/DP900.png" alt="Microsoft Data Fundamentals (DP-900)">
         </a>
       </div>
     </div>
@@ -195,7 +178,7 @@
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact-list">
-      <div class="pill">📧 <a href="pittanikatsneha@gmail.com">pittanikatsneha@gmail.com</a></div>
+      <div class="pill">📧 <a href="mailto:pittanikatsneha@gmail.com">pittanikatsneha@gmail.com</a></div>
       <div class="pill">📍 Bangalore, India</div>
       <div class="pill">🔗 <a href="https://www.linkedin.com/in/sneha-pittanikat" target="_blank" rel="noopener">LinkedIn: Sneha Pittanikat</a></div>
     </div>

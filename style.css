@@ -98,18 +98,44 @@ h2{font-size:28px; text-align:center; color:#333}
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-} */
+} 
 
 .projects-container {
-  max-width: 1200px; /* keeps layout centered */
-  margin: 0 auto;    /* centers the grid */
-  padding: 0 20px;   /* little space on sides */
-}
+  max-width: 1200px; /* keeps layout centered 
+  margin: 0 auto;    /* centers the grid 
+  padding: 0 20px;   /* little space on sides 
+} 
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* space between cards */
+  gap: 20px; /* space between cards *
+} */
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 on desktop */
+  gap: 30px; /* space between cards */
+}
+
+/* Tablet (≤900px): 2 cards per row */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (≤600px): 1 card per row */
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* PROJECT CARD */

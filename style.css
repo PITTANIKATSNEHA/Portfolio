@@ -121,14 +121,30 @@ h2{font-size:28px; text-align:center; color:#333}
   display: block;
 } */
 
-.project-preview video {
+/*.project-preview video {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}*/
+
+.project-preview {
+  width: 100%;
+  height: 180px; /* fixed height like before */
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
+
+.project-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop instead of stretching */
+  display: block;
+}
+
 
 
 /* INFO */

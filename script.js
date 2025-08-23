@@ -79,3 +79,28 @@ filterBtns.forEach(btn => {
   });
 });
 
+//==============================
+
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.getAttribute("data-filter");
+
+    projects.forEach((card, index) => {
+      if (filter === "all" || card.classList.contains(filter)) {
+        // delay for animation stagger effect
+        setTimeout(() => {
+          card.style.display = "block";
+          setTimeout(() => card.classList.add("show"), 50);
+        }, index * 100);
+      } else {
+        card.classList.remove("show");
+        setTimeout(() => card.style.display = "none", 400);
+      }
+    });
+  });
+});
+
+

@@ -81,26 +81,31 @@ filterBtns.forEach(btn => {
 
 //==============================
 
-const filterBtns = document.querySelectorAll(".filter-btn");
-const projects = document.querySelectorAll(".project-card");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filter = btn.getAttribute("data-filter");
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.getAttribute("data-filter");
 
-    projects.forEach((card, index) => {
+    projectCards.forEach(card => {
+      // First hide smoothly
+      card.style.transition = "all 0.4s ease";
+      
       if (filter === "all" || card.classList.contains(filter)) {
-        // delay for animation stagger effect
-        setTimeout(() => {
-          card.style.display = "block";
-          setTimeout(() => card.classList.add("show"), 50);
-        }, index * 100);
+        card.style.opacity = "1";
+        card.style.transform = "scale(1)";
+        card.style.display = "block"; // show again
       } else {
-        card.classList.remove("show");
-        setTimeout(() => card.style.display = "none", 400);
+        card.style.opacity = "0";
+        card.style.transform = "scale(0.9)";
+        setTimeout(() => {
+          card.style.display = "none"; // remove from flow after animation
+        }, 400);
       }
     });
   });
 });
+
 
 

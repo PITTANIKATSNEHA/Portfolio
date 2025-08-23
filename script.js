@@ -80,32 +80,3 @@ filterBtns.forEach(btn => {
 });
 
 //==============================
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const filter = button.getAttribute("data-filter");
-
-    projectCards.forEach(card => {
-      // First hide smoothly
-      card.style.transition = "all 0.4s ease";
-      
-      if (filter === "all" || card.classList.contains(filter)) {
-        card.style.opacity = "1";
-        card.style.transform = "scale(1)";
-        card.style.display = "block"; // show again
-      } else {
-        card.style.opacity = "0";
-        card.style.transform = "scale(0.9)";
-        setTimeout(() => {
-          card.style.display = "none"; // remove from flow after animation
-        }, 400);
-      }
-    });
-  });
-});
-
-
-

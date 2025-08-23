@@ -48,7 +48,7 @@ h2{font-size:28px; text-align:center; color:#333}
 .skill__fill{display:block; height:100%; background:linear-gradient(90deg,#43a047,#66bb6a)}
 
 /* PROJECTS */
-.projects{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); margin-top:20px}
+/*.projects{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); margin-top:20px}
 .project{background:var(--card); border-radius:18px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
 .project__media{height:170px; background:#eef1f5;}
 .project__body{padding:18px}
@@ -58,7 +58,78 @@ h2{font-size:28px; text-align:center; color:#333}
 .project__actions{display:flex; gap:10px; flex-wrap:wrap}
 .btn{display:inline-block; padding:10px 14px; background:var(--brand); color:#fff; border-radius:10px; text-decoration:none; font-weight:800}
 .btn:hover{opacity:.95}
-.btn--ghost{background:#e6efe7; color:#225e27}
+.btn--ghost{background:#e6efe7; color:#225e27} */
+
+/* Projects Section */
+.projects {
+  padding: 4rem 2rem;
+  background: #fdfcf9; /* adjust to your theme */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.project-preview img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-info {
+  padding: 1.2rem;
+}
+
+.project-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-info .btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.project-info .btn:hover {
+  background: var(--secondary);
+}
+
 
 /* CERTIFICATES */
 .certs{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin-top:20px}

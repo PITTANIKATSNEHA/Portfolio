@@ -93,11 +93,23 @@ h2{font-size:28px; text-align:center; color:#333}
   color: #fff;
 }
 
-/* PROJECT GRID */
+/* PROJECT GRID 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+} */
+
+.projects-container {
+  max-width: 1200px; /* keeps layout centered */
+  margin: 0 auto;    /* centers the grid */
+  padding: 0 20px;   /* little space on sides */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* space between cards */
 }
 
 /* PROJECT CARD */

@@ -57,3 +57,25 @@ const observer = new IntersectionObserver((entries) => {
 }, { root: null, rootMargin: '-45% 0px -45% 0px', threshold: 0 });
 
 sections.forEach(sec => observer.observe(sec));
+
+// ==== project =====
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    btn.classList.add("active");
+
+    const category = btn.getAttribute("data-filter");
+
+    projectCards.forEach(card => {
+      if (category === "all" || card.dataset.category === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+

@@ -60,7 +60,7 @@ h2{font-size:28px; text-align:center; color:#333}
 .btn:hover{opacity:.95}
 .btn--ghost{background:#e6efe7; color:#225e27} */
 
-/*.projects {
+.projects {
   padding: 4rem 2rem;
   background: #fdfcf9;
 }
@@ -158,7 +158,9 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.ai { background: #4cafef; }
 .tag.app { background: #ff9800; }
 .tag.website { background: #e91e63; }
-.tag.data { background: #8bc34a; } */
+.tag.data { background: #8bc34a; } 
+
+/* -- edited area new -- */
 
 .projects-filter {
   display: flex;

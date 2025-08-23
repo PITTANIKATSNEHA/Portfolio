@@ -91,39 +91,63 @@
     </div>
   </section>
 
-<!-- Projects Section -->
+  <!-- project section -->
+
 <section id="projects" class="projects">
   <h2 class="section-title">My Projects</h2>
+
+  <!-- Category Filter -->
+  <div class="projects-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="website">Website</button>
+    <button class="filter-btn" data-filter="app">App</button>
+    <button class="filter-btn" data-filter="data">Data Analysis</button>
+    <button class="filter-btn" data-filter="ai">AI / Machine Learning</button>
+  </div>
+
+  <!-- Project Grid -->
   <div class="projects-grid">
-    
+
     <!-- Project Card -->
-    <div class="project-card">
+    <div class="project-card" data-category="ai">
       <div class="project-preview">
-        <img src="assets/project1.webp" alt="Project 1 Preview" loading="lazy" />
+        <img src="assets/project1.webp" alt="AI Project" loading="lazy" />
       </div>
       <div class="project-info">
-        <h3>Project One</h3>
-        <p>A short description about this project, what tech stack was used, and the purpose.</p>
-        <a href="#" target="_blank" class="btn">View Project</a>
+        <span class="tag ai">AI / Machine Learning</span>
+        <h3>Recipe Generation From Food Images</h3>
+        <a href="#" class="btn">View on GitHub</a>
       </div>
     </div>
 
     <!-- Project Card -->
-    <div class="project-card">
+    <div class="project-card" data-category="app">
       <div class="project-preview">
-        <img src="assets/project2.webp" alt="Project 2 Preview" loading="lazy" />
+        <img src="assets/project2.webp" alt="App Project" loading="lazy" />
       </div>
       <div class="project-info">
-        <h3>Project Two</h3>
-        <p>This project showcases design, animation, and interactivity using modern frameworks.</p>
-        <a href="#" target="_blank" class="btn">View Project</a>
+        <span class="tag app">App</span>
+        <h3>Business Analytics Application using Dash</h3>
+        <a href="#" class="btn">View on GitHub</a>
       </div>
     </div>
 
-    <!-- Add more projects as needed -->
+    <!-- Project Card -->
+    <div class="project-card" data-category="website">
+      <div class="project-preview">
+        <img src="assets/project3.webp" alt="Website Project" loading="lazy" />
+      </div>
+      <div class="project-info">
+        <span class="tag website">Website</span>
+        <h3>Website for Sports Retail</h3>
+        <a href="#" class="btn">Demo</a>
+        <a href="#" class="btn">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Add more projects with correct data-category -->
   </div>
 </section>
-
 
   <!-- PROJECTS --
   <section id="projects" class="section">

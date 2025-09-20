@@ -203,8 +203,8 @@ h2{font-size:28px; text-align:center; color:#333}
   width: 350px;
   height: 220px;   /* fixed height *
   object-fit: cover; /* crops image if necessary 
-} */
----------------------------------------------- /*
+} *
+---------------------------------------------- 
 /* CERTIFICATES 
 .certs {
   display: grid;

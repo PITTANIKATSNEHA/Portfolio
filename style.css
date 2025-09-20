@@ -205,10 +205,10 @@ h2{font-size:28px; text-align:center; color:#333}
   object-fit: cover; /* crops image if necessary 
 } *
 ---------------------------------------------- 
-/* CERTIFICATES */
+/* CERTIFICATES *
 .certs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* max 3 per row */
+  grid-template-columns: repeat(3, 1fr); /* max 3 per row *
   gap: 20px;
   margin-top: 20px;
 }
@@ -223,11 +223,39 @@ h2{font-size:28px; text-align:center; color:#333}
   display: block;
 }
 
-/* Hover effect */
+/* Hover effect *
 .cert:hover img {
-  transform: scale(1.05); /* bigger pop */
+  transform: scale(1.05); /* bigger pop *
   box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
+----------------------------------------------------------------------------------------*/
+/* CERTIFICATES */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* flexible grid */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cert img {
+  width: 100%;
+  height: auto;         /* keep natural aspect ratio */
+  max-height: 220px;    /* prevent oversized images */
+  object-fit: contain;  /* no cropping, fits inside box */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  background: #fff;     /* keeps background clean */
+  padding: 8px;         /* gives breathing space */
+}
+
+/* Hover effect */
+.cert:hover img {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
 
 /* CONTACT */
 .contact{display:grid; gap:10px; justify-items:center; margin-top:10px}

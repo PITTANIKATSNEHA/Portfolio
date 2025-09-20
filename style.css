@@ -193,10 +193,15 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.website { background: #e91e63; }
 .tag.data { background: #8bc34a; }
 
-/* CERTIFICATES */
+/* CERTIFICATES *
 .certs{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin-top:20px}
 .cert img{width:100%; height:auto; border-radius:12px; box-shadow:var(--shadow); transition:transform .2s ease; display:block}
-.cert:hover img{transform:scale(1.03)}
+.cert:hover img{transform:scale(1.03)} */
+.certificate-img {
+  width: 350px;
+  height: 220px;   /* fixed height */
+  object-fit: cover; /* crops image if necessary */
+}
 
 /* CONTACT */
 .contact{display:grid; gap:10px; justify-items:center; margin-top:10px}

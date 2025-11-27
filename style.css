@@ -35,13 +35,13 @@ h2{font-size:28px; text-align:center; color:#333}
 @keyframes blink{50%{opacity:0}}
 
 
-/* Profile Picture */
-/* HOME IMAGE WRAPPER (outer ring) */
+/* Profile Picture 
+/* HOME IMAGE WRAPPER (outer ring) 
 .profile-wrapper {
     width: 370px;     
     height: 370px;
     border-radius: 50%;
-    border: 10px solid rgba(255,255,255,0.75); /* outer circle */
+    border: 10px solid rgba(255,255,255,0.75); /* outer circle *
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,15 +51,40 @@ h2{font-size:28px; text-align:center; color:#333}
     z-index: 3;
 }
 
-/* INNER IMAGE */
+/* INNER IMAGE 
 .profile-pic {
     width: 260px;
     height: 260px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid white; /* inner white ring */
+    border: 6px solid white; /* inner white ring *
 }
 
+/* OUTER RING - same size as example */
+.profile-wrapper {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 8px solid #ffffff;   /* clean solid white border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 8px 30px rgba(0,0,0,0.35);   /* soft shadow like example */
+    margin-bottom: 32px;               /* perfect gap between image & name */
+    z-index: 3;
+}
+
+/* INNER IMAGE */
+.profile-pic {
+    width: 200px;  
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;           /* inner thin ring */
+}
+
+margin-bottom: 32px;
 
 /* ABOUT */
 .about p{line-height:1.7; max-width:900px; margin:10px auto}

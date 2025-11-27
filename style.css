@@ -71,7 +71,7 @@ h2{font-size:28px; text-align:center; color:#333}
     justify-content: center;
     box-shadow: 
         0 8px 30px rgba(0,0,0,0.35);   /* soft shadow like example */
-    margin-bottom: 32px;               /* perfect gap between image & name */
+    margin-bottom: 62px;               /* perfect gap between image & name */
     z-index: 3;
 }
 
@@ -83,8 +83,6 @@ h2{font-size:28px; text-align:center; color:#333}
     object-fit: cover;
     border: 4px solid white;           /* inner thin ring */
 }
-
-margin-bottom: 62px;
 
 /* ABOUT */
 .about p{line-height:1.7; max-width:900px; margin:10px auto}

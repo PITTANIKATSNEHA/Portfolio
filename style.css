@@ -53,8 +53,8 @@ h2{font-size:28px; text-align:center; color:#333}
 
 /* INNER IMAGE */
 .profile-pic {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid white; /* inner white ring */

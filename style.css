@@ -255,3 +255,60 @@ h2{font-size:28px; text-align:center; color:#333}
   .home__inner h1{font-size:32px}
 }
 
+/* ------------------------------------------------------------------------------- */
+/* profile picture in hero */
+.home__inner {
+  z-index: 2; /* sits above background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* optional subtle overlay to increase contrast on busy backgrounds */
+.home::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* profile circle */
+.profile-pic{
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  display: block;
+  transform: translateY(0);
+}
+
+/* slightly larger name for hero and spacing */
+.home__inner h1{
+  font-size: 44px;
+  line-height: 1.05;
+  margin-top: 6px;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+/* role styling — keep it visible but lighter */
+.roles__text{
+  color: rgba(255,255,255,0.95);
+  font-weight:700;
+}
+
+/* responsiveness */
+@media (max-width: 720px){
+  .profile-pic{ width: 120px; height: 120px; border-width:5px; }
+  .home__inner h1{ font-size: 32px; }
+  .roles{ font-size:16px }
+}
+
+/* ensure hero stacking is correct */
+.home{ position: relative; overflow: hidden; }
+

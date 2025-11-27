@@ -36,31 +36,7 @@ h2{font-size:28px; text-align:center; color:#333}
 
 
 /* Profile Picture 
-/* HOME IMAGE WRAPPER (outer ring) 
-.profile-wrapper {
-    width: 370px;     
-    height: 370px;
-    border-radius: 50%;
-    border: 10px solid rgba(255,255,255,0.75); /* outer circle *
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 0 0 8px rgba(255, 255, 255, 0.20),
-        0 12px 40px rgba(0,0,0,0.55);
-    z-index: 3;
-}
-
-/* INNER IMAGE 
-.profile-pic {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid white; /* inner white ring *
-}
-
-/* OUTER RING - same size as example */
+/* OUTER RING */
 .profile-wrapper {
     width: 260px;
     height: 260px;
@@ -70,7 +46,7 @@ h2{font-size:28px; text-align:center; color:#333}
     align-items: center;
     justify-content: center;
     box-shadow: 
-        0 8px 30px rgba(0,0,0,0.35);   /* soft shadow like example */
+        0 8px 30px rgba(0,0,0,0.35);   
     margin-bottom: 62px;               /* perfect gap between image & name */
     z-index: 3;
 }
@@ -253,7 +229,7 @@ h2{font-size:28px; text-align:center; color:#333}
 
 .cert img {
   width: 100%;
-  height: 220px;         /* fixed uniform height */
+  height: 320px;         /* fixed uniform height */
   object-fit: cover;     /* crops neatly to fit same size */
   border-radius: 12px;
   box-shadow: var(--shadow);

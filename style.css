@@ -228,7 +228,7 @@ h2{font-size:28px; text-align:center; color:#333}
 }
 
 .cert img {
-  width: 100%;
+  width: 200%;
   height: 400px;         /* fixed uniform height */
   object-fit: cover;     /* crops neatly to fit same size */
   border-radius: 12px;

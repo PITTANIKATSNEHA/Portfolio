@@ -259,20 +259,20 @@ h2{font-size:28px; text-align:center; color:#333}
   align-items: center;
   gap: 12px;
 }
-/* --------------------------------------------------------*/
+/* --------------------------------------------------------*
 .profile-pic {
-    width: 230px;            /* bigger size */
-    height: 230px;           /* bigger size */
+    width: 230px;            /* bigger siz
+    height: 230px;           /* bigger siz
     object-fit: cover;
     border-radius: 50%;
-    border: 10px solid #fff; /* thick white border */
+    border: 10px solid #fff; /* thick white border 
     box-shadow: 
-        0 0 0 6px rgba(255, 255, 255, 0.2),  /* outer soft ring */
-        0 12px 35px rgba(0,0,0,0.55);        /* deeper shadow */
+        0 0 0 6px rgba(255, 255, 255, 0.2),  /* outer soft ring 
+        0 12px 35px rgba(0,0,0,0.55);        /* deeper shadow 
     transition: transform .3s ease;
 }
 
-/* optional: hover zoom effect */
+ optional: hover zoom effect *
 .profile-pic:hover {
     transform: scale(1.03);
 }
@@ -288,7 +288,7 @@ h2{font-size:28px; text-align:center; color:#333}
   z-index: 1;
 }
 
-/* profile circle */
+/* profile circle *
 .profile-pic{
   width: 160px;
   height: 160px;
@@ -298,6 +298,23 @@ h2{font-size:28px; text-align:center; color:#333}
   box-shadow: 0 10px 30px rgba(0,0,0,0.45);
   display: block;
   transform: translateY(0);
+} */
+
+.profile-pic {
+    width: 330px;            /* bigger size */
+    height: 330px;           /* bigger size */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid #fff; /* thick white border */
+    box-shadow: 
+        0 0 0 6px rgba(255, 255, 255, 0.2),  /* outer soft ring */
+        0 12px 35px rgba(0,0,0,0.55);        /* deeper shadow */
+    transition: transform .3s ease;
+}
+
+/* optional: hover zoom effect */
+.profile-pic:hover {
+    transform: scale(1.03);
 }
 
 /* slightly larger name for hero and spacing */

@@ -259,12 +259,19 @@ h2{font-size:28px; text-align:center; color:#333}
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* IMAGE — SAME SIZE AS PROJECT IMAGE */
+/*---------------------------------------------
+/* IMAGE — SAME SIZE AS PROJECT IMAGE 
 .cert img {
   width: 300%;
-  height: 300%;        /* EXACT same as project card */
-  object-fit: cover;    /* crop to fit */
+  height: 300%;        /* EXACT same as project card *
+  object-fit: cover;    /* crop to fit *
   display: block;
+}
+---------------------------------------*/
+.cert img {
+  width: min(4cm, 100%);
+  height: min(4cm, 100%);
+  object-fit: cover;
 }
 
 /* Optional: Add text under certificate like project-info */

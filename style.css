@@ -219,7 +219,6 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.website { background: #e91e63; }
 .tag.data { background: #8bc34a; }
 
-/* CERTIFICATES SECTION  */
 /* CERTIFICATES SECTION */
 .certificates {
   padding: 4rem 2rem;
@@ -262,8 +261,8 @@ h2{font-size:28px; text-align:center; color:#333}
 
 /* IMAGE — SAME SIZE AS PROJECT IMAGE */
 .cert img {
-  width: 100%;
-  height: 100%;        /* EXACT same as project card */
+  width: 300%;
+  height: 300%;        /* EXACT same as project card */
   object-fit: cover;    /* crop to fit */
   display: block;
 }

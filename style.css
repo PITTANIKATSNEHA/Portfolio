@@ -220,136 +220,103 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.data { background: #8bc34a; }
 
 /* CERTIFICATES SECTION  */
-:root {
-  /* change this value to make both tiles larger/smaller */
-  --card-img-height: 260px;
-  --card-radius: 1rem;
+:root{
+  --container-width: 1400px;    /* wider so tiles scale more */
+  --card-img-height: 360px;     /* big tile height — change if you want larger/smaller */
   --card-gap: 30px;
-  --container-width: 1200px;
 }
 
-/* make sure box sizing is predictable */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* predictable box sizing */
+*,*::before,*::after{box-sizing:border-box;}
 
-/* --- Container alignment (projects + certificates share layout) --- */
+/* shared container so both sections align exactly */
 .projects-container,
 .certificates {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px 4rem;
+  padding: 2.5rem 20px 4rem;
 }
 
-/* --- GRID: same columns and gap for both sections --- */
+/* shared grid for projects + certs to keep columns aligned */
 .projects-grid,
 .certs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  grid-template-columns: repeat(3,1fr);
   gap: var(--card-gap);
 }
 
-/* same responsive behaviour */
-@media (max-width: 900px) {
-  .projects-grid,
-  .certs {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* responsive */
+@media (max-width: 1100px) {
+  .projects-grid, .certs { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 700px) {
+  .projects-grid, .certs { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px) {
-  .projects-grid,
-  .certs {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --- CARD: match styles between project and cert cards --- */
+/* CARD: same for project and cert so heights & widths match exactly */
 .project-card,
 .cert {
   background: #fff;
-  border-radius: var(--card-radius);
+  border-radius: 0; /* remove rounded corners for edge-to-edge look */
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.06); /* subtle shadow */
+  transition: transform .28s ease,box-shadow .28s ease;
   display: flex;
   flex-direction: column;
+  min-height: calc(var(--card-img-height) + 120px); /* image + content area */
 }
 
-/* hover effect same */
+/* larger hover lift */
 .project-card:hover,
-.cert:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+.cert:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
 }
 
-/* FORCE both cards to be visually equal height.
-   The min-height should include image height + approx content height.
-   Tweak 140px below if your card text area is bigger/smaller. */
-.project-card,
-.cert {
-  min-height: calc(var(--card-img-height) + 140px);
-}
-
-/* --- IMAGE / PREVIEW: identical heights --- */
+/* PROJECT PREVIEW IMAGE — fills and crops to look crisp */
 .project-preview {
-  width: 100%;
-  height: var(--card-img-height); /* unified height */
-  overflow: hidden;
-  flex-shrink: 0;
+  width:100%;
+  height: var(--card-img-height);
+  flex-shrink:0;
+  overflow:hidden;
+  background:#fff;
 }
 .project-preview img,
-.project-preview video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.project-preview video{
+  width:100%;
+  height:100%;
+  object-fit: cover;   /* fill project tile */
+  display:block;
+  border-radius: 0;    /* edge-to-edge */
 }
 
-/* certificate image same as project preview */
-.cert img {
-  width: 100%;
+/* CERT IMAGE — same tile height but show whole certificate (no crop) */
+.cert img{
+  width:100%;
   height: var(--card-img-height);
-  object-fit: cover;
-  display: block;
+  display:block;
+  object-fit: contain; /* show full certificate inside the tile */
+  background: #fff;    /* white background if cert has transparent edges */
+  border-radius: 0;
+  padding: 0.6rem;     /* small inner padding so certificate isn't flush to edges */
 }
 
-/* --- CARD CONTENT AREA: make spacing similar --- */
+/* If you'd prefer certs flush without inner padding, set padding:0 above */
+
+/* CONTENT AREAS — keep spacing consistent */
 .project-info,
 .cert-info {
-  padding: 1rem;
-  flex: 1 1 auto; /* allow content to take up rest of card */
+  padding: 1rem 1.25rem;
+  flex: 1 1 auto;
 }
 
-/* Project title size and cert-info text alignment */
-.project-info h3 { font-size: 1.15rem; margin: 0.4rem 0; font-weight: 600; color: #222; }
-.cert-info { font-size: 1rem; color: #222; text-align: center; font-weight: 600; }
+/* text sizing that matches project look */
+.project-info h3{ font-size:1.15rem; margin:0.25rem 0; color:#222; font-weight:600; }
+.cert-info{ font-size:1rem; color:#222; text-align:center; font-weight:600; }
 
-/* small visual tweak for rounded images in case */
-.project-preview,
-.cert img {
-  border-bottom-left-radius: 0; /* keep top radius on card only */
-  border-bottom-right-radius: 0;
-}
+/* ensure section title spacing looks clean */
+.section-title{ text-align:center; margin:1.5rem 0 1rem; font-weight:700;color:#222; }
 
-/* ensure the card top corners remain rounded */
-.project-card > .project-preview,
-.cert > img,
-.cert > .cert-info {
-  border-top-left-radius: var(--card-radius);
-  border-top-right-radius: var(--card-radius);
-}
-
-/* if certificate images have transparent bg, ensure card bg shows as white */
-.cert img { background: #fff; }
-
-/* Optional: center section title and give spacing */
-.section-title { text-align: center; margin: 2.5rem 0 1.5rem; font-weight: 700; color:#222; }
-
-/* small tweak to keep buttons / tags same appearance */
-.project-info .btn { margin-top: 0.6rem; }
 
 
 /* CONTACT SECTION */

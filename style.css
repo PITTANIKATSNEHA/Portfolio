@@ -220,62 +220,137 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.data { background: #8bc34a; }
 
 /* CERTIFICATES SECTION  */
-/* CERTIFICATES SECTION */
+:root {
+  /* change this value to make both tiles larger/smaller */
+  --card-img-height: 260px;
+  --card-radius: 1rem;
+  --card-gap: 30px;
+  --container-width: 1200px;
+}
+
+/* make sure box sizing is predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- Container alignment (projects + certificates share layout) --- */
+.projects-container,
 .certificates {
-  padding: 4rem 2rem;
-  background: #f8f8f8; /* same as projects section */
-}
-
-.certs {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 4rem;
+}
+
+/* --- GRID: same columns and gap for both sections --- */
+.projects-grid,
+.certs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  gap: var(--card-gap);
 }
 
-/* Tablet */
+/* same responsive behaviour */
 @media (max-width: 900px) {
-  .certs { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid,
+  .certs {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-  .certs { grid-template-columns: 1fr; }
+  .projects-grid,
+  .certs {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* CARD SAME AS PROJECT-CARD */
+/* --- CARD: match styles between project and cert cards --- */
+.project-card,
 .cert {
   background: #fff;
-  border-radius: 1rem;
+  border-radius: var(--card-radius);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Hover same as project */
+/* hover effect same */
+.project-card:hover,
 .cert:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* IMAGE — SAME SIZE AS PROJECT IMAGE */
-.cert img {
+/* FORCE both cards to be visually equal height.
+   The min-height should include image height + approx content height.
+   Tweak 140px below if your card text area is bigger/smaller. */
+.project-card,
+.cert {
+  min-height: calc(var(--card-img-height) + 140px);
+}
+
+/* --- IMAGE / PREVIEW: identical heights --- */
+.project-preview {
   width: 100%;
-  height: 180px;        /* EXACT same as project card */
-  object-fit: cover;    /* crop to fit */
+  height: var(--card-img-height); /* unified height */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.project-preview img,
+.project-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* Optional: Add text under certificate like project-info */
+/* certificate image same as project preview */
+.cert img {
+  width: 100%;
+  height: var(--card-img-height);
+  object-fit: cover;
+  display: block;
+}
+
+/* --- CARD CONTENT AREA: make spacing similar --- */
+.project-info,
 .cert-info {
   padding: 1rem;
-  font-size: 1rem;
-  color: #222;
-  font-weight: 600;
-  text-align: center;
+  flex: 1 1 auto; /* allow content to take up rest of card */
 }
+
+/* Project title size and cert-info text alignment */
+.project-info h3 { font-size: 1.15rem; margin: 0.4rem 0; font-weight: 600; color: #222; }
+.cert-info { font-size: 1rem; color: #222; text-align: center; font-weight: 600; }
+
+/* small visual tweak for rounded images in case */
+.project-preview,
+.cert img {
+  border-bottom-left-radius: 0; /* keep top radius on card only */
+  border-bottom-right-radius: 0;
+}
+
+/* ensure the card top corners remain rounded */
+.project-card > .project-preview,
+.cert > img,
+.cert > .cert-info {
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+}
+
+/* if certificate images have transparent bg, ensure card bg shows as white */
+.cert img { background: #fff; }
+
+/* Optional: center section title and give spacing */
+.section-title { text-align: center; margin: 2.5rem 0 1.5rem; font-weight: 700; color:#222; }
+
+/* small tweak to keep buttons / tags same appearance */
+.project-info .btn { margin-top: 0.6rem; }
+
 
 /* CONTACT SECTION */
 .contact {

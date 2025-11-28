@@ -220,31 +220,63 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.data { background: #8bc34a; }
 
 /* CERTIFICATES SECTION  */
+/* CERTIFICATES SECTION */
+.certificates {
+  padding: 4rem 2rem;
+  background: #f8f8f8; /* same as projects section */
+}
+
 .certs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
-    gap: 20px;
-    margin-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  .certs { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .certs { grid-template-columns: 1fr; }
+}
+
+/* CARD SAME AS PROJECT-CARD */
+.cert {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover same as project */
+.cert:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* IMAGE — SAME SIZE AS PROJECT IMAGE */
 .cert img {
-    width: 100%;
-    height: 360px; /* fixed uniform height */
-    object-fit: cover; /* crops neatly to fit same size */
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block;
-    background: none;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  height: 260px;        /* EXACT same as project card */
+  object-fit: cover;    /* crop to fit */
+  display: block;
 }
 
-/* Hover effect */
-.cert:hover img {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+/* Optional: Add text under certificate like project-info */
+.cert-info {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
 }
+
 
 /* CONTACT SECTION */
 .contact {

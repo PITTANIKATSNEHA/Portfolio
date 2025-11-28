@@ -220,37 +220,32 @@ h2{font-size:28px; text-align:center; color:#333}
 .tag.data { background: #8bc34a; }
 
 /* CERTIFICATES SECTION  */
-/* Make sure this section has same background as projects */
+/* CERTIFICATES SECTION */
 .certificates {
-  padding: 0 2rem 4rem;
-  background: #f8f8f8; /* same as .projects */
+  padding: 4rem 2rem;
+  background: #f8f8f8; /* same as projects section */
 }
 
-/* CERTIFICATES GRID – aligned with project tiles */
 .certs {
-  max-width: 1200px;          /* same as .projects-container */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 per row on desktop */
-  gap: 30px;                  /* same spacing as projects */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* Tablet (≤900px): 2 tiles per row */
+/* Tablet */
 @media (max-width: 900px) {
-  .certs {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .certs { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile (≤600px): 1 tile per row */
+/* Mobile */
 @media (max-width: 600px) {
-  .certs {
-    grid-template-columns: 1fr;
-  }
+  .certs { grid-template-columns: 1fr; }
 }
 
-/* CERTIFICATE CARD – same vibe as project-card */
+/* CARD SAME AS PROJECT-CARD */
 .cert {
   background: #fff;
   border-radius: 1rem;
@@ -259,18 +254,27 @@ h2{font-size:28px; text-align:center; color:#333}
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect similar to project-card */
+/* Hover same as project */
 .cert:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* CERTIFICATE IMAGE – rectangular like project preview */
+/* IMAGE — SAME SIZE AS PROJECT IMAGE */
 .cert img {
   width: 100%;
-  height: 220px;       /* similar to .project-preview height */
-  object-fit: cover;   /* crops nicely */
+  height: 180px;        /* EXACT same as project card */
+  object-fit: cover;    /* crop to fit */
   display: block;
+}
+
+/* Optional: Add text under certificate like project-info */
+.cert-info {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* CONTACT SECTION */

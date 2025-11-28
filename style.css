@@ -263,7 +263,7 @@ h2{font-size:28px; text-align:center; color:#333}
 /* IMAGE — SAME SIZE AS PROJECT IMAGE */
 .cert img {
   width: 100%;
-  height: 260px;        /* EXACT same as project card */
+  height: 100%;        /* EXACT same as project card */
   object-fit: cover;    /* crop to fit */
   display: block;
 }

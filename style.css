@@ -269,8 +269,8 @@ h2{font-size:28px; text-align:center; color:#333}
 }
 ---------------------------------------*/
 .cert img {
-  width: min(4cm, 100%);
-  height: min(4cm, 100%);
+  width: min(8cm, 100%);
+  height: min(8cm, 100%);
   object-fit: cover;
 }
 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sneha Pittanikat | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Center Rounded Navbar -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#home" class="nav__link active">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#certificates" class="nav__link">Certificates</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="home">
+    <div class="home__inner">
+
+      <!-- profile picture  -->
+    <img src="assets/snehap.jpg" alt="Sneha Photo" class="profile-pic">
+
+      
+      <h1>Hi, I am <span class="accent-strong">Sneha Pittanikat</span></h1>
+      <p class="roles">
+        <span class="roles__text" aria-label="Professional roles"></span>
+        <span class="cursor" aria-hidden="true">|</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about" class="about section">
+    <h2>About Me</h2>
+
+    <p>
+        I am a Data Engineer with 3+ years of experience building scalable, cloud-based data solutions using Snowflake, 
+        Python, PySpark, Databricks, and modern ETL frameworks. I specialize in developing robust data pipelines, designing 
+        efficient data warehouses, and optimizing ETL/ELT workflows using tools like Talend, DBT, Snowpipe, and AutomateNOW. 
+        My work spans end-to-end engineering data modeling, ingestion, transformation, automation, and performance 
+        optimization enabling organizations to access reliable, analytics-ready data at scale. I also build impactful 
+        dashboards using Tableau and ThoughtSpot, reduce manual effort through workflow automation, and enhance processing 
+        performance across distributed systems.
+      
+    </p>
+
+    <p>
+        With strong expertise in dimensional modeling, schema design, SQL optimization, and metadata-driven development, 
+        I have delivered CI/CD-enabled data transformations and analytics solutions in Agile environments. I collaborate 
+        closely with engineering, product, and business teams to improve data quality, strengthen pipeline efficiency, 
+        and support seamless reporting. Known for clear communication and technical leadership, I have driven demos, 
+        walkthroughs, and knowledge-transfer sessions that empower stakeholders and accelerate project delivery. I thrive 
+        in fast-paced environments and aim to build scalable, future-ready data solutions that drive measurable business 
+        value.
+      
+    </p>
+
+    <div class="socials">
+      <a class="chip" href="https://www.linkedin.com/in/sneha-pittanikat/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="chip" href="https://docs.google.com/document/d/1FkDwYAY3SYbE7RhCrTCluPBUIWDX-e1j/view" target="_blank" rel="noopener">Resume</a>
+      <a class="chip" href="https://github.com/PITTANIKATSNEHA" target="_blank" rel="noopener">GitHub</a>
+      
+    </div>
+  </section> 
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <div class="skill__row"><span>Snowflake</span><span>91%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:91%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>SQL</span><span>95%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:95%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>Python</span><span>85%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:85%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>PySpark</span><span>79%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:79%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>Tableau</span><span>82%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:82%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>Data Modeling</span><span>87%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:82%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>Azure</span><span>85%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:85%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill__row"><span>Databricks</span><span>78%</span></div>
+        <div class="skill__bar"><span class="skill__fill" style="width:78%"></span></div>
+      </div>
+    </div>
+  </section>
+
+<!-- project section -->
+<section id="projects" class="projects">
+  <h2 class="section-title">My Projects</h2>
+
+  <!-- Category Filter -->
+  <div class="projects-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="website">Website</button>
+   <!-- <button class="filter-btn" data-filter="app">App</button> -->
+    <button class="filter-btn" data-filter="data">Data Analysis</button>
+    <button class="filter-btn" data-filter="ai">AI / Machine Learning</button>
+  </div>
+
+  <!-- Projects Container -->
+  <div class="projects-container">
+    <!-- Project Grid -->
+    <div class="projects-grid">
+
+      <!-- Banglore acciedent Project Card -->
+      <div class="project-card" data-category="data">
+        <div class="project-preview">
+          <video autoplay loop muted playsinline>
+            <source src="assets/project1.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-info">
+          <span class="tag data">Data Analysis</span>
+          <h3>Bangalore Road Accident Insights Using Snowflake and Tableau</h3>
+          <a href="https://github.com/PITTANIKATSNEHA/Bangalore_Accident_Analysis" class="btn">View on GitHub</a>
+          <a href="https://public.tableau.com/app/profile/sneha.pittanikat/vizzes" class="btn">View on Tableau</a>
+        </div>
+      </div>
+      
+       <!-- walmart Project Card -->
+      <div class="project-card" data-category="data">
+        <div class="project-preview">
+          <img src="assets/walmartecomm.jpg" alt="Building Retail Data Pipeline" loading="lazy" />
+        </div>
+        <div class="project-info">
+          <span class="tag data">Data Analysis</span>
+          <h3>Holiday-Driven Sales and Demand Analysis Pipeline for Walmart</h3>
+          <a href="https://github.com/PITTANIKATSNEHA/Building_Retail_Data_Pipeline/tree/main" class="btn">View on GitHub</a>
+        </div>
+      </div>
+
+       <!-- Airbnb-Case-Study-Data-Modeling-Analytics Project Card -->
+      <div class="project-card" data-category="data">
+        <div class="project-preview">
+          <img src="assets/Airbnb.png" alt="Airbnb-Case-Study-Data-Modeling-Analytics" loading="lazy" />
+        </div>
+        <div class="project-info">
+          <span class="tag data">Data Analysis</span>
+          <h3>Airbnb Case Study-Data Modeling Analytics</h3>
+          <a href="https://github.com/PITTANIKATSNEHA/Airbnb-Case-Study-Data-Modeling-Analytics" class="btn">View on GitHub</a>
+        </div>
+      </div>
+
+      <!-- Spotify End-To-End Azure Data Engineering Project Card -->
+      <div class="project-card" data-category="data">
+        <div class="project-preview">
+          <img src="assets/Spotify.jpg" alt="Spotify End-To-End Azure Data Engineering Project" loading="lazy" />
+        </div>
+        <div class="project-info">
+          <span class="tag data">Data Analysis</span>
+          <h3>End-to-End Spotify Data Pipeline Using Azure Services</h3>
+          <a href="https://github.com/PITTANIKATSNEHA/End-to-End_Spotify_Data_Pipeline_Using_Azure_Services" class="btn">View on GitHub</a>
+        </div>
+      </div>
+
+      <!-- Dhisha's Website Project Card with video -->
+      <div class="project-card" data-category="website">
+        <div class="project-preview">
+          <video autoplay loop muted playsinline>
+            <source src="assets/project3.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-info">
+          <span class="tag website">Website</span>
+          <h3>Website for Home Baker</h3>
+          <!--  <a href="#" class="btn">Demo</a>  -->
+          <a href="https://pittanikatsneha.github.io/DHISHAS-GATEAUX/" class="btn">View on GitHub</a>
+        </div>
+      </div>
+
+      <!--Snowflake Intelligence–Powered Task Guidance Agent Project Card -->
+      <div class="project-card" data-category="ai">
+        <div class="project-preview">
+          <img src="assets/sfagent.jpg" alt="Snowflake Intelligence–Powered Task Guidance Agent" loading="lazy" />
+        </div>
+        <div class="project-info">
+          <span class="tag ai">AI / Machine Learning</span>
+          <h3>Snowflake Intelligence–Powered Task Guidance Agent</h3>
+          <a href="https://github.com/PITTANIKATSNEHA/Snowflake_Intelligence_Powered_Task_Guidance_Agent" class="btn">View on GitHub</a>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="section">
+  <h2>Certificates</h2>
+
+  <div class="certs">
+    <!-- AZ-900 -->
+    <a class="cert" href="https://learn.microsoft.com/api/credentials/share/en-us/SnehaPittanikat-2463/A6A65B46E63316F0?sharingId=20FA8B93C0F7C0AF" 
+       target="_blank" rel="noopener">
+      <img src="assets/AZ900.png" alt="Microsoft Azure Fundamentals (AZ-900)">
+    </a>
+
+    <!-- DP-900 -->
+    <a class="cert" href="https://learn.microsoft.com/api/credentials/share/en-us/SnehaPittanikat-2463/6AECC5C9D2C4A21E?sharingId=20FA8B93C0F7C0AF" 
+       target="_blank" rel="noopener">
+      <img src="assets/DP900.png" alt="Microsoft Data Fundamentals (DP-900)">
+    </a>
+
+    <!-- Snowflake -->
+    <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/869c5d09fcdd6ee357d6383c2937b9de6d17d6b3" 
+       target="_blank" rel="noopener">
+      <img src="assets/ADESNOWFLAKE.png" alt="Associate Data Engineer in Snowflake">
+    </a>
+
+    <!-- Databrick SQL  -->
+    <a class="cert" href="https://github.com/PITTANIKATSNEHA/Portfolio/blob/main/assets/databricks.jpg" target="_blank" rel="noopener">
+      <img src="assets/databricks.jpg" alt="Databricks SQL certificate">
+    </a>
+
+      <!-- Databrick Datacamp SQL  -->
+    <a class="cert" href="https://www.datacamp.com/statement-of-accomplishment/track/a32560367c521719423304310ec4d8b82fa59b9c?raw=1" 
+      target="_blank" rel="noopener">
+      <img src="assets/Datacampdatabricks.jpg" alt="Databricks Datacamp certificate">
+    </a>
+
+          <!-- snowflake AI Datacamp  -->
+    <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/3f422d7b0dc10e2a4ff4af580bdba565e542d77c" 
+      target="_blank" rel="noopener">
+      <img src="assets/SnowflakeAI.jpg" alt="SmowflakeAI Datacamp certificate">
+      
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="pill">📧 <a href="mailto:pittanikatsneha@gmail.com">pittanikatsneha@gmail.com</a></div>
+      <div class="pill">📍 Bangalore, India</div>
+      <div class="pill">🔗 <a href="https://www.linkedin.com/in/sneha-pittanikat" target="_blank" rel="noopener">LinkedIn: Sneha Pittanikat</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 Sneha Pittanikat</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
